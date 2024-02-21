@@ -1,6 +1,7 @@
 package client
 
 import (
+	"fmt"
 	"log"
 )
 
@@ -18,6 +19,10 @@ func (prompt *clientPrompt) Init() {
 	log.Println("Prompt User Init")
 }
 
-func (prompt *clientPrompt) WriteMessage(m string) {
-	log.Println("Write Message")
+func (prompt *clientPrompt) WriteMessage() string {
+	var message = ""
+	fmt.Print("Write Message : ")
+	fmt.Scanln(&message)
+
+	return message
 }
