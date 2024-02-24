@@ -7,13 +7,13 @@ import (
 	"github.com/gorilla/websocket"
 )
 
-func ModCallTest() []string {
+func ModCallTest() {
 	log.Println("Mod Call Test")
 }
 
 var upgrader = websocket.Upgrader{} // use default options
 
-func echo(w http.ResponseWriter, r *http.Request) {
+func Echo(w http.ResponseWriter, r *http.Request) {
 	c, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		log.Print("upgrade:", err)
