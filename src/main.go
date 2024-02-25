@@ -1,16 +1,13 @@
 package main
 
 import (
-	"go_websocket_server/server_core"
-	"go_websocket_server/sub_module"
-	//	"go_websocket_server/server_action"
+//	"go_websocket_server/server_core"
+	"go_websocket_server/server_action"
 )
 
 func main() {
-	for _, e := range sub_module.SubModuleCall() {
-		println(e)
-	}
 
-	//	server_action.ModCallTest()
-	server_core.Run()
+	server_action.ModCallTest()
+	server_action.ModCallTest2()
+	// server_core.Run()
 }
