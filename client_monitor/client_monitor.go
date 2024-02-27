@@ -10,7 +10,7 @@ func ExecuteMonitor() {
 	var inTE, outTE *walk.TextEdit
 
 	MainWindow{
-		Title:   "SCREAMO",
+		Title:   "WEBSOCKET_CLIENT_MONITOR",
 		MinSize: Size{600, 400},
 		Layout:  VBox{},
 		Children: []Widget{
