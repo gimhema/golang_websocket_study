@@ -16,5 +16,4 @@ func (um UserManager) Initialize() {
 func (um UserManager) AddNewUser(newUser user_info.User) {
 	um.user_container = append(um.user_container, newUser)
 	um.user_search_map[newUser.UserID] = &newUser
-
 }

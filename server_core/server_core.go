@@ -18,7 +18,7 @@ func Run() {
 	flag.Parse()
 	log.SetFlags(0)
 	http.HandleFunc("/echo", server_action.Echo)
-    http.HandleFunc("/login", server_action.Logic)
+	http.HandleFunc("/login", server_action.Login)
 	http.HandleFunc("/", home)
 	log.Fatal(http.ListenAndServe(*addr, nil))
 }
