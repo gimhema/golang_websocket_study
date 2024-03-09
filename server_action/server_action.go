@@ -15,8 +15,6 @@ var (
 
 func GetUpgrader() *websocket.Upgrader {
 	once.Do(func() {
-		// upgrader 초기화 또는 설정
-		// 여기에 필요한 초기화 코드를 추가하세요.
 	})
 	return &upgrader
 }
