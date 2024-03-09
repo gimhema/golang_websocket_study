@@ -3,18 +3,26 @@ package server_action
 import (
 	"log"
 	"net/http"
+	"sync"
 
 	"github.com/gorilla/websocket"
 )
 
-func ModCallTest() {
-	log.Println("Mod Call Test")
+var (
+	once     sync.Once
+	upgrader websocket.Upgrader
+)
+
+func GetUpgrader() *websocket.Upgrader {
+	once.Do(func() {
+		// upgrader 초기화 또는 설정
+		// 여기에 필요한 초기화 코드를 추가하세요.
+	})
+	return &upgrader
 }
 
-var upgrader = websocket.Upgrader{} // use default options
-
 func Echo(w http.ResponseWriter, r *http.Request) {
-	c, err := upgrader.Upgrade(w, r, nil)
+	c, err := GetUpgrader().Upgrade(w, r, nil)
 	if err != nil {
 		log.Print("upgrade:", err)
 		return
